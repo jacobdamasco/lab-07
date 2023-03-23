@@ -21,10 +21,10 @@ def readLightSensor(mcp):
 def main():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(11, GPIO.OUT)
-    CLK = 23
-    MISO = 21
-    MOSI = 19
-    CS = 24
+    CLK = "23"
+    MISO = "21"
+    MOSI = "19"
+    CS = "24"
     mcp = Adafruit_MCP3008.MCP3008(clk=CLK, cs=CS, miso=MISO, mosi=MOSI)
 
     while True:
