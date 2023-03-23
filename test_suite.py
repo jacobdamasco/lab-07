@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+import Adafruit_GPIO_SPI as SPI
 import Adafruit_MCP3008
 import time
 
@@ -21,11 +22,9 @@ def readLightSensor(mcp):
 def main():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(11, GPIO.OUT)
-    CLK = "23"
-    MISO = "21"
-    MOSI = "19"
-    CS = "24"
-    mcp = Adafruit_MCP3008.MCP3008(clk=CLK, cs=CS, miso=MISO, mosi=MOSI)
+    SPI_PORT = 0
+    SPI_DEVICE = 0
+    mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
 
     while True:
         # Test 1: blink LED 5 times w on/off intervals 500ms
