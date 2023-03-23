@@ -12,7 +12,7 @@ def blinkLED(pin, delay):
 
 def readLightSensor(mcp, channel):
     sensorVal = mcp.read_adc(channel)
-    if (sensorVal > 130):
+    if (sensorVal > 170):
         print(sensorVal, " = bright")
     else:
         print(sensorVal, " = dark")
@@ -23,7 +23,7 @@ def readLightSensor(mcp, channel):
 
 def readSoundSensor(mcp, channel):
     sensorVal = mcp.read_adc(channel)
-    if (sensorVal > 400):
+    if (sensorVal < 400):
         print(sensorVal)
     else:
         print(sensorVal)
